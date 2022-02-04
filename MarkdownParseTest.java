@@ -5,6 +5,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 import org.junit.*;
+import java.util.*;
+
 
 public class MarkdownParseTest {
     final String BASE_FILE_PATH = "C:/Users/alcat/OneDrive/Documents/GitHub/markdown-parse2/testfiles";
@@ -91,7 +93,8 @@ public class MarkdownParseTest {
         String[] expectedOutput = {};
         testFile("test-file.md", expectedOutput);
     }    @Test
-    public void testTestFile9() {
-        assertEquals(2, 3);
+    public void testTestFile9() throws IOException {
+	    String contents = Files.readString(Path.of("C:/Users/alcat/OneDrive/Documents/GitHub/markdown-parse2/testfiles/test-file9.md"));
+        assertEquals(List.of(), MarkdownParse.getLinks(contents));
     }
 }
