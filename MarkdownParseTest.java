@@ -90,5 +90,8 @@ public class MarkdownParseTest {
     public void testTestFile8() {
         String[] expectedOutput = {};
         testFile("test-file.md", expectedOutput);
+    }    @Test
+    public void testTestFile9() {
+        assertEquals(2, 3);
     }
 }
